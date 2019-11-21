@@ -1,0 +1,25 @@
+#N canvas 527 76 730 512 10;
+#X obj 38 121 spigot;
+#X obj 71 98 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 36 160 print;
+#X obj 34 51 dumpOSC 14000;
+#X obj 357 405 sendOSC 12000;
+#X text 91 97 <-turn on input from Processing;
+#X msg 146 376 connect 10.0.0.162 12000;
+#X msg 423 319 10;
+#X msg 258 303 500;
+#X msg 258 331 send /planets/rate \$1;
+#X msg 423 352 send /planets/messageRate \$1;
+#X text 143 202 planet speeds: /* rates 60 - min/sec 3600 - hour/ sec
+86400 - day/sec 52 594.877 -- 6 months/5 min */;
+#X text 408 218 message recieve speed / second: 1 = 1 message/sec 10
+= 10 messages/sec etc;
+#X connect 0 0 2 0;
+#X connect 1 0 0 1;
+#X connect 3 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 4 0;
+#X connect 10 0 4 0;
